@@ -1,0 +1,13 @@
+﻿@charset "utf-8";
+/* CSS Document */
+body,h1,h2,h3,h4,h5,h6,p,a,img,input,ul,ol,li,dl,dt,dd,figure,figcaption{margin:0;padding:0}
+
+ul,ol{list-style:none}
+img{display:block;border:0}
+input{outline:none}
+body{font:14px/1.5 "微软雅黑";color: #666;background-color:#f5f5f5}
+a{text-decoration:none;color:#383838}
+a:hover{color:#00a5e3;}
+.l{float:left}
+.r{float:right}
+header,nav,section,article,aside,footer,main,figure{display:block}

@@ -1,12 +1,12 @@
 <template>
   <div class="faxian">
   <h1>我的</h1>
-    <Navbar></Navbar>
+  <Navbar></Navbar> 
   </div>
 </template>
 
 <script>
-import Navbar from './Mine'
+   import Navbar from './Navbar'
 export default {
   name: 'mine',
   data () {
@@ -15,7 +15,7 @@ export default {
     }
   },
   components:{
-    Navbar
+       Navbar
   }
 }
 </script>

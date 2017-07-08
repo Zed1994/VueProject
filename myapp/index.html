@@ -8,10 +8,13 @@
     <link rel="stylesheet" href="./static/swiper.min.css">
     <!-- <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=FWnVakKB0v5w6E958SE7697DTt1rasDC">   	
     </script> -->
- <!--    <script type="text/javascript">
+    <script type="text/javascript">
         var htmlTag = document.getElementsByTagName("html")[0];
-        htmlTag.style.fontSize = document.documentElement.clientWidth / 10 + "px";
-    </script> -->
+        htmlTag.style.fontSize = document.documentElement.clientWidth / 7.5 + "px";
+//      htmlTag.style.fontSize = window.screen.width / 7.5 + "px";
+        
+        
+    </script>
  
 
   </head>
@@ -19,38 +22,18 @@
     <div id="app"></div>
     <!-- built files will be auto injected -->
   </body>
-  <script src="./static/swiper.min.js"></script>
- <!--  <script>
-    var inner = document.querySelector(".addr");
-    function translateGPS2Address() {
-        navigator.geolocation.getCurrentPosition(function(pos){
-            console.log(pos);
-            // 创建地理编码实例
-            var myGeo = new BMap.Geocoder();
-            myGeo.getLocation(new BMap.Point(pos.coords.longitude, pos.coords.latitude), function(result){
-                console.log(result);
-                if (result){
-                    inner.innerHTML=result.address;
-                    console.log(result.address)
-                }
-            });
-        });
-    }
-    translateGPS2Address();
-    var swiper = new Swiper('.swiper-container',{
-        pagination: '.swiper-pagination',
-        paginationClickable: true,
-    });
-    
-    var ele = document.getElementsByTagName("section");
-    var len = ele.length;
-    for(var i = 0; i < len; i++){
-      ele[i].addEventListener("click",function(){
-      location.href= "html/detail.html"
-    })
-    }
+  <!--<script src="./static/swiper.min.js"></script>-->
+  <script>
+   
+    // var ele = document.getElementsByTagName("section");
+    // var len = ele.length;
+    // for(var i = 0; i < len; i++){
+    //   ele[i].addEventListener("click",function(){
+    //   location.href= "html/detail.html"
+    // })
+    // }
     
     
-</script> -->
+</script>
 </html>
 

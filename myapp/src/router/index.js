@@ -5,6 +5,7 @@ import Tejia from '@/components/Tejia'
 import Pintuan from '@/components/Pintuan'
 import Cart from '@/components/Cart'
 import Mine from '@/components/Mine'
+
 import VueResource from 'vue-resource'
 Vue.use(Router)
 Vue.use(VueResource)

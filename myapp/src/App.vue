@@ -35,6 +35,7 @@ a:hover{
 .nav{
   display: flex;
   height: px2rem(160px);
+  background: white;
  footer {
     width: 100%;
     /*min-height: 1.5rem;*/
@@ -57,5 +58,8 @@ a:hover{
     	
     }
     
+ }
+ .focus{
+ 		color:blue;
  }
 </style>

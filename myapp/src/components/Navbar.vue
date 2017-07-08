@@ -2,31 +2,32 @@
 
     <div class="nav">
        <footer>
-         <a href="/">
+         <router-link to="/" active-class="active" exact>
           <i class="iconfont">&#xe61e;</i>
           <span>今日特卖</span>
-          </a>
+          </router-link>
           
-          <a href="#/Tejia">
+          <router-link to="/Tejia" active-class="active" exact>
           <i class="iconfont">&#xe61b;</i>
           <span>淘特价</span>
-          </a>
+          </router-link>
           
-          <a href="#/Pintuan">
+          <router-link to="/Pintuan" active-class="active" exact>
           <i class="iconfont">&#xe645;</i>
           <span>拼团</span>
-          </a>
+          </router-link>
           
-          <a href="#/Cart">
+           <router-link to="/Cart" active-class="active" exact>
           <i class="iconfont">&#xe67f;</i>
           <span>购物车</span>
-          </a>
+          </router-link>
 
-          <a href="#/Mine">
+            <router-link to="/Mine" active-class="active" exact>
           <i class="iconfont">&#xe6b3;</i>
           <span>我的</span>
-          </a>
+         </router-link>
        </footer>
+       
 	</div>
 </template>
 
@@ -63,6 +64,8 @@ $ui-width: 750px;
   -webkit-text-stroke-width: 0.2px;
   -moz-osx-font-smoothing: grayscale;
 }
-  
+ .active{
+ 	color:#e60044
+ } 
 </style>
  

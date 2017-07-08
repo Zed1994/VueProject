@@ -177,10 +177,7 @@
 		background: white;
 	}
 	
-	html,
-	body {
-		height: 100%;
-	}
+	
 </style>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
@@ -271,7 +268,7 @@
 			
 			.sales{
 				display: inline-block;
-				width: px2rem(160px);
+				width: px2rem(180px);
 				height: px2rem(52px);
 				line-height:px2rem(52px);
 				text-align: center;

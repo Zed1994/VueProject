@@ -17,15 +17,15 @@
           <span>拼团</span>
           </router-link>
           
-           <router-link to="/Cart" active-class="active" exact>
+          <router-link to="/Cart" active-class="active" exact>
           <i class="iconfont">&#xe67f;</i>
           <span>购物车</span>
           </router-link>
 
-            <router-link to="/Mine" active-class="active" exact>
+          <router-link to="/Mine" active-class="active" exact>
           <i class="iconfont">&#xe6b3;</i>
           <span>我的</span>
-         </router-link>
+          </router-link>
        </footer>
        
 	</div>

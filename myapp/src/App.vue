@@ -34,15 +34,14 @@ a:hover{
 }
 .nav{
   display: flex;
-  height: px2rem(160px);
+  min-height: px2rem(100px);
   background: white;
  footer {
     width: 100%;
     /*min-height: 1.5rem;*/
     box-sizing: border-box;
-   height: px2rem(160px);
+   min-height: px2rem(100px);
    box-sizing: border-box;
-   padding-top: px2rem(20px);
     display: flex;
     justify-content: space-around;
     border-top: 1px solid #ccc; 
@@ -51,7 +50,7 @@ a:hover{
     	height: 100%;
     	i {
     	     display: block;
-    	     font-size: 22px;
+    	     font-size: 21px;
     	     text-align: center; 
     	     }
     	}

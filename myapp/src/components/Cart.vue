@@ -1,12 +1,13 @@
 <template>
   <div class="faxian">
   <h1>购物车页</h1>
-    
-  </div>
+ 
+	</div>
 </template>
 
 <script>
    import Navbar from './Navbar'
+
 export default {
   name: 'cart',
   data () {
@@ -38,4 +39,5 @@ export default {
   -webkit-text-stroke-width: 0.2px;
   -moz-osx-font-smoothing: grayscale;
 }
+
 </style>

@@ -261,6 +261,6 @@ mounted:function(){
 #shop .u3 .l3 .d7 .p8{font-size: 12px;margin-right:0.5rem;}
 .nav{
 	display: flex;
-	height: 1.6rem;
+	min-height: 1rem;
 }
 </style>

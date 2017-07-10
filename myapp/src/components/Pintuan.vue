@@ -129,12 +129,12 @@
 			</section>
 		</main>
 		
-		<Navbar></Navbar>
+		<Footerbar></Footerbar>
 	</div>
 </template>
 
 <script>
-	import Navbar from './Navbar'
+	import Footerbar from './Footerbar'
 	import Swiper from '../../static/swiper.min.js'
 	export default {
 		name: 'pintuan',
@@ -144,7 +144,7 @@
 			}
 		},
 		components:{
-			Navbar
+			Footerbar
 		},
 
 		mounted: function() {

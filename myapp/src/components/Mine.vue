@@ -129,7 +129,11 @@ export default {
 #mess1 .u1 .l1 a i{text-align: center;}
 #mess1 .u1 .l1 a span{font-size: 10px;}
 
-#down{height:6.7rem;background:#f6f6f6;margin-top: 0.3rem;}
+#down{height:7.3rem;background:#f6f6f6;margin-top: 0.3rem;}
 #down .cart,#down .juan{width: 100%;display: flex;flex-direction: row;justify-content: space-between;height:0.9rem;line-height: 0.9rem;padding-left:0.3rem;padding-right:0.3rem;color:#000;box-sizing:border-box;font-size:14px;background: #fff;}
-
+.nav{
+	position: fixed;
+	width: 100%;
+	bottom:0
+}
 </style>

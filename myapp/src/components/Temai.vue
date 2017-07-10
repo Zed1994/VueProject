@@ -324,7 +324,7 @@ $ui-width:750px;
         font-size:  px2rem(9px);
         padding-left: px2rem(9px);
         span{
-          background: #ff0;
+          background: #f90;
           color: #fff;
           border-radius: px2rem(10px);
           padding:0 px2rem(10px);

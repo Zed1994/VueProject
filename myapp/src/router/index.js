@@ -6,6 +6,7 @@ import Pintuan from '@/components/Pintuan'
 import Cart from '@/components/Cart'
 import Mine from '@/components/Mine'
 import VueResource from 'vue-resource'
+import Login from '@/components/Login'
 Vue.use(Router)
 Vue.use(VueResource)
 Vue.http.options.emulateJSON = true;
@@ -36,6 +37,11 @@ export default new Router({
       path: '/mine',
       name: 'Mine',
       component: Mine
+    },
+    {
+      path: '/login',
+      name: 'Login',
+      component: Login
     }
   ]
 })

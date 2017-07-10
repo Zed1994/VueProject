@@ -5,7 +5,7 @@
       <div><a href="#"><i class="iconfont r">&#xe6c0;</i></a></div>
     </div>
     <div id="nav">
-      <span class="l"><a href="#">推荐</a></span>
+      <span class="l"><a href="#/login">推荐</a></span>
       <ul class="r">
         <li id="aaa" class="l"><a href="#">男装</a></li>
         <li ><a href="#">数码家电</a></li>

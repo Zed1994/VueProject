@@ -1,12 +1,12 @@
 <template>
   <div class="faxian">
   <h1>购物车页</h1>
-    <Navbar></Navbar>
+<!--     <Navbar></Navbar> -->
   </div>
 </template>
 
 <script>
-import Navbar from './Cart'
+// import Navbar from './Cart'
 export default {
   name: 'cart',
   data () {
@@ -15,7 +15,7 @@ export default {
     }
   },
   components:{
-    Navbar
+    // Navbar
   }
 }
 </script>

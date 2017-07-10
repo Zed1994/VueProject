@@ -1,12 +1,12 @@
 <template>
   <div class="faxian">
   <h1>今日特价页</h1>
-    <Navbar></Navbar>
+
   </div>
 </template>
 
 <script>
-import Navbar from './Tejia'
+
 export default {
   name: 'tejia',
   data () {
@@ -15,7 +15,7 @@ export default {
     }
   },
   components:{
-    Navbar
+
   }
 }
 </script>

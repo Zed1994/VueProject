@@ -1,7 +1,8 @@
 <template>
   <div class="wode">
 
-    <div id="header">
+      <div id="header">
+
         <div class="one">
             <p class="p1"><a href="#/tejia">&lt;</a></p>
            <h1> 个人中心</h1>
@@ -76,8 +77,7 @@
           <p class="p5">></p>
         </div>
       </div>
- 
-      
+
     <Navbar></Navbar>
   </div>
 </template>
@@ -125,6 +125,7 @@ export default {
 #mess .p2{height: 0.9rem;line-height: 0.9rem;padding-left: 0.3rem;}
 #mess .p3{height: 0.9rem;line-height: 0.9rem;padding-right: 0.3rem;}
 
+
 #mess1{width:100%;height:1.28rem;background: #fff;}
 #mess1 .u1{width:100%;height:1.28rem;display: flex;flex-direction: row;justify-content: space-around;}
 #mess1 .u1 .l1{display: flex;flex-direction: column;height:1.28rem;}
@@ -132,8 +133,11 @@ export default {
 #mess1 .u1 .l1 a i{text-align: center;}
 #mess1 .u1 .l1 a span{font-size: 10px;}
 
-#down{height:7rem;background:#f6f6f6;margin-top: 0.3rem;}
+#down{height:7.3rem;background:#f6f6f6;margin-top: 0.3rem;}
 #down .cart,#down .juan{width: 100%;display: flex;flex-direction: row;justify-content: space-between;height:0.9rem;line-height: 0.9rem;padding-left:0.3rem;padding-right:0.3rem;color:#000;box-sizing:border-box;font-size:14px;background: #fff;}
-.nav{display: flex;height: 1.2rem;}
-
+.nav{
+	position: fixed;
+	width: 100%;
+	bottom:0
+}
 </style>

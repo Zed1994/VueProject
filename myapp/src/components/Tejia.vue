@@ -1,5 +1,6 @@
+朱晓杰 18:51:30
 <template>
-  <div id="faxian">
+  <div id="tejia">
 
   <div id="top">
      <div id="header">
@@ -207,16 +208,14 @@ mounted:function(){
              pagination: '.swiper-pagination',
              autoplay:2000
         });
-  }
+           }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-html,body{
-  height: 100%
-}
-#faxian{display:flex;height:100%;width:100%;flex-direction: column;}
+
+#tejia{display:flex;height:100%;width:100%;flex-direction: column;}
 
 #top{display: flex;height:1.59rem;flex-direction: column; background: white;}
 #header{width:100%;height:0.91rem;border-bottom: 1px solid #ccc;}
@@ -250,8 +249,8 @@ html,body{
 #shop .u3 .l3{width:3.67rem;float:left;}
 #shop .u3 .l3 .img3{width:3.67rem;}
 #shop .u3 .l3 .d5{width:100%;height:0.3rem;margin-top: 0.1rem;display: flex;flex-direction: row;}
-#shop .u3 .l3 .d5 .s1{width:0.6rem;background: orange;color:#fff;font-size: 12px;font-weight: 600;border-radius: 5px;height:0.3rem;line-height: 0.3rem;}
-#shop .u3 .l3 .d5 .p4{font-size: 12px;padding-left: 0.3rem;text-overflow: ellipsis;overflow: hidden;white-space: nowrap;}
+#shop .u3 .l3 .d5 .s1{display:inline-block;width:0.7rem;background: orange;color:#fff;font-size: 12px;font-weight: 600;border-radius: 5px;height:0.3rem;line-height: 0.3rem;}
+#shop .u3 .l3 .d5 .p4{width: 3rem;font-size: 12px;padding-left: 0.3rem;height: .3rem;line-height: .3rem;text-overflow: ellipsis;overflow: hidden;white-space: nowrap;}
 #shop .u3 .l3 .d6{width:100%;height:0.7rem;margin-top: 0.1rem;display: flex;flex-direction: row;justify-content: space-between;}
 #shop .u3 .l3 .d6 .p5{font-size:16px;color:orange;}
 #shop .u3 .l3 .d6 .p5 .s2{font-size:12px;}
@@ -261,6 +260,7 @@ html,body{
 #shop .u3 .l3 .d7 .p8{font-size: 12px;margin-right:0.5rem;}
 .nav{
   display: flex;
-  height: 1.2rem
+  min-height: 1rem;
 }
 </style>
+

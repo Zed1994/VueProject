@@ -1,30 +1,34 @@
 <template>
-   <div id="app">
-    <router-view class="view"></router-view>
-    <div class="nav">
+   <div class="nav">
         <footer>
-          <a href="/">
-          <i class="iconfont">&#xe639;</i>
-          <span>外卖</span>
+         <a href="/">
+          <i class="iconfont">&#xe61e;</i>
+          <span>今日特卖</span>
           </a>
           
-          <a href="#/Faxian">
-          <i class="iconfont">&#xe608;</i>
-          <span>发现</span>
+          <a href="#/Tejia">
+          <i class="iconfont">&#xe61b;</i>
+          <span>淘特价</span>
           </a>
           
-          <a href="#/Login">
-          <i class="iconfont">&#xe62f;</i>
-          <span>订单</span>
+          <a href="/Pintuan">
+          <i class="iconfont">&#xe645;</i>
+          <span>拼团</span>
           </a>
           
-          <a href="#/Regist">
-          <i class="iconfont">&#xe64f;</i>
+          <a href="#/Cart">
+          <i class="iconfont">&#xe67f;</i>
+          <span>购物车</span>
+          </a>
+
+          <a href="#/Mine">
+          <i class="iconfont">&#xe6b3;</i>
           <span>我的</span>
           </a>
        </footer>
     </div>
-  </div>
+
+
 </template>
 
 <script>
@@ -40,13 +44,21 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+*{
+  padding:0;
+  margin:0;
+}
+a{
+  text-decoration: none
+}
+
 @font-face {
   font-family: 'iconfont';
-  src: url('../static/font/iconfont.eot');
-  src: url('../static/font/iconfont.eot?#iefix') format('embedded-opentype'),
-  url('../static/font/iconfont.woff') format('woff'),
-  url('../static/font/iconfont.ttf') format('truetype'),
-  url('../static/font/iconfont.svg#iconfont') format('svg');
+  src: url('../../static/font/iconfont.eot');
+  src: url('../../static/font/iconfont.eot?#iefix') format('embedded-opentype'),
+  url('../../static/font/iconfont.woff') format('woff'),
+  url('../../static/font/iconfont.ttf') format('truetype'),
+  url('../../static/font/iconfont.svg#iconfont') format('svg');
 }
 
 .iconfont{
@@ -56,4 +68,16 @@ export default {
   -webkit-text-stroke-width: 0.2px;
   -moz-osx-font-smoothing: grayscale;
 }
+.nav{
+  display: flex;
+}
+.nav footer {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    border-top: 1px solid #ccc; }
+.nav footer a i {
+      display: block;
+      font-size: 22px;
+      text-align: center; }
 </style>

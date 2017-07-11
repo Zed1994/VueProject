@@ -1,4 +1,4 @@
- <template>
+<template>
 
     <div class="nav">
        <footer>
@@ -23,12 +23,16 @@
           </router-link>
 
           <router-link to="/Mine" active-class="active" exact>
+
           <i class="iconfont">&#xe6b3;</i>
           <span>我的</span>
           </router-link>
        </footer>
-       
-	</div>
+
+    </div>
+
+
+
 </template>
 
 <script>
@@ -42,12 +46,13 @@ export default {
 }
 </script>
 
- Add "scoped" attribute to limit CSS to this component only 
-<style  lang="scss">
+
+<style scoped lang="scss">
 $ui-width: 750px;
 @function px2rem($px) {
 	@return $px/$ui-width*7.5rem;
 }
+
 @font-face {
   font-family: 'iconfont';
   src: url('../../static/font/iconfont.eot');
@@ -64,6 +69,7 @@ $ui-width: 750px;
   -webkit-text-stroke-width: 0.2px;
   -moz-osx-font-smoothing: grayscale;
 }
+
  .active{
  	color:#e60044
  } 

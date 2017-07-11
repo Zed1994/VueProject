@@ -207,9 +207,7 @@ mounted:function(){
              pagination: '.swiper-pagination',
              autoplay:2000
         });
-
-
-  }
+           }
 }
 </script>
 
@@ -260,7 +258,8 @@ mounted:function(){
 #shop .u3 .l3 .d7 .p7{font-size: 12px;}
 #shop .u3 .l3 .d7 .p8{font-size: 12px;margin-right:0.5rem;}
 .nav{
-	display: flex;
-	min-height: 1rem;
+  display: flex;
+  min-height: 1rem;
 }
 </style>
+

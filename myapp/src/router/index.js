@@ -10,7 +10,7 @@ import Lazy from '@/components/Lazyload'
 import { InfiniteScroll  } from 'mint-ui';
 import { Lazyload  } from 'mint-ui';
 import VueResource from 'vue-resource'
-
+import Login from '@/components/Login'
 Vue.use(Router)
 Vue.use(VueResource)
 Vue.use(InfiniteScroll);
@@ -50,10 +50,17 @@ export default new Router({
       component: Search
     },
      {
+
       path: '/lazy',
       name: 'Lazyload',
       component: Lazy
     },
+		{
+      path: '/login',
+      name: 'Login',
+      component: Login
+    }
+
   ]
 })
 

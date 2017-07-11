@@ -1,9 +1,7 @@
 <template>
-  <div id="app">
-    <router-view class="view"></router-view>
-    
-
-  </div>
+<div id="app">
+  <router-view class="view"></router-view>
+</div>
 </template>
 
 <script>
@@ -15,7 +13,7 @@ export default {
 <style lang="scss">
 $ui-width: 750px;
 @function px2rem($px) {
-	@return $px/$ui-width*7.5rem;
+  @return $px/$ui-width*7.5rem;
 }
 /**{
   padding:0;
@@ -25,7 +23,7 @@ a{
   text-decoration: none
 }
 a:hover{
-	color:#e60044;
+  color:#e60044;
 }
 #app{
   height: 100%;
@@ -46,19 +44,19 @@ a:hover{
     justify-content: space-around;
     border-top: 1px solid #ccc; 
     a {
-    	display:inline-block;
-    	height: 100%;
-    	i {
-    	     display: block;
-    	     font-size: 21px;
-    	     text-align: center; 
-    	     }
-    	}
-    	
+      display:inline-block;
+      height: 100%;
+      i {
+           display: block;
+           font-size: 21px;
+           text-align: center; 
+           }
+      }
+      
     }
     
  }
  .focus{
- 		color:blue;
+    color:blue;
  }
 </style>

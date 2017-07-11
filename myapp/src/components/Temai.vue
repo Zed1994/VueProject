@@ -162,8 +162,8 @@ export default {
       slidesPerView: 1,
       paginationClickable: true,           
       loop: true,
-       pagination: '.swiper-pagination',
-       autoplay:2000,
+      pagination: '.swiper-pagination',
+      autoplay:2000,
     });
     this.$http.post('/zhe800/api/temai/select').then(response => {
 				console.log(response)
@@ -183,15 +183,7 @@ export default {
 
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style >
 
-  body {
-  background: white; }
-
-html, body {
-  height: 100%; }
-
-</style>
 <style scoped lang='scss'>
 $ui-width:750px;
 @function px2rem($px){

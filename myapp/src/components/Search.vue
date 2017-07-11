@@ -30,15 +30,7 @@ export default {
 
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style >
 
-  body {
-  background: white; }
-
-html, body {
-  height: 100%; }
-
-</style>
 <style scoped lang='scss'>
 $ui-width:750px;
 @function px2rem($px){

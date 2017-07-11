@@ -8,6 +8,8 @@ import Mine from '@/components/Mine'
 import Search from '@/components/Search'
 import VueResource from 'vue-resource'
 import Login from '@/components/Login'
+import Detail from '@/components/Detail'
+
 Vue.use(Router)
 Vue.use(VueResource)
 Vue.http.options.emulateJSON = true;
@@ -48,6 +50,11 @@ export default new Router({
       path: '/login',
       name: 'Login',
       component: Login
+    },
+    {
+      path: '/detail',
+      name: 'Detail',
+      component: Detail
     }
   ]
 })

@@ -70,7 +70,7 @@
     <div id="btn3">
       <div class="ttt"><span><a href="#">热卖爆款</a></span><span><a href="#">热门品牌</a></span></div>
       <ul>
-        <li class="l">
+        <!--<li class="l">
           <a href="#"><img src="https://z11.tuanimg.com/imagev2/trade/600x600.abc675ae6c0e521cbbebad73adeefd0f.310x310.jpg.webp"></a>
           <p><span>北京</span>这个软件不一般</p>
           <h3>￥49<span>￥12349</span></h3>
@@ -130,6 +130,11 @@
           <a href="#"><img src="https://z12.tuanimg.com/imagev2/trade/600x600.e18441dc11c4f3a346e485cf8faa3e93.310x310.jpg.webp"></a>
           <p><span>抚顺</span>这个软件不一般</p>
           <h3>￥49<span>￥123</span></h3>
+        </li>-->
+         <li class="l" v-for="item in list">
+          <a href="#"><img :src="item.src"/></a>
+          <p><span>{{item.addr}}</span>{{item.title}}</p>
+          <h3>{{item.price}}<span>{{item.prev}}</span></h3>
         </li>
       </ul>
     </div>
@@ -146,7 +151,7 @@ export default {
   name: 'temai',
   data () {
     return {
-      
+      list:[]
     }
   },
   components:{
@@ -160,6 +165,15 @@ export default {
        pagination: '.swiper-pagination',
        autoplay:2000,
     });
+    this.$http.post('/zhe800/api/temai/select').then(response => {
+				console.log(response)
+
+				this.list = response.body.goods_info
+
+			}, response => {
+				// error callback
+			});
+		
   }
 
 }

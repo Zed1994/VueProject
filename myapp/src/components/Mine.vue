@@ -9,7 +9,7 @@
         </div>
         <div class="two">
           <div class="login">
-            <a href="javascript:;"> 登录 | 注册 </a>
+            <a href="#/login"> 登录 | 注册 </a>
           </div>
         </div>      
       </div>

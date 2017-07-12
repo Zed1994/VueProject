@@ -83,7 +83,8 @@
 <!-- ======================shop============== -->
     <div id="shop">
       <ul class="u3">
-        <li class="l3">
+      <!-- v-for="item in list" -->
+        <li class="l3" >
           <img class="img3" src="//z12.tuanimg.com/imagev2/zhaoshang/700x700.d0164199f090b12ace75441a480031f8.310x310.jpg.webp">
           <div class="d5">
             <span class="s1">上海</span>
@@ -98,7 +99,7 @@
             <p class="p8">去天猫</p>
           </div>
         </li>
-        <li class="l3">
+  <!--       <li class="l3">
           <img class="img3" src="//z13.tuanimg.com/imagev2/zhaoshang/700x700.b886750b84bdb5fbec2f69dfd6002591.310x310.jpg.webp">
           <div class="d5">
             <span class="s1">上海</span>
@@ -112,8 +113,8 @@
             <p class="p7">999件已售</p>
             <p class="p8">去天猫</p>
           </div>
-        </li>
-        <li class="l3">
+        </li> -->
+<!--         <li class="l3">
           <img class="img3" src="//z12.tuanimg.com/imagev2/zhaoshang/700x700.661d28e2a419fc325fed8f4075f4bc5a.310x310.jpg.webp">
           <div class="d5">
             <span class="s1">上海</span>
@@ -128,7 +129,7 @@
             <p class="p8">去天猫</p>
           </div>
         </li>
-        <li class="l3">
+ -->        <li class="l3">
           <img class="img3" src="//z11.tuanimg.com/imagev2/zhaoshang/700x700.83caa0c2a08a4b841a89bf513d245d62.310x310.jpg.webp">
           <div class="d5">
             <span class="s1">上海</span>
@@ -193,6 +194,7 @@ export default {
   name: 'tejia',
   data () {
     return {
+      list:[]
     }
   },
   components:{
@@ -207,8 +209,12 @@ mounted:function(){
              pagination: '.swiper-pagination',
              autoplay:2000
         });
-           }
+          // this.$http.post('/zhe800/api/temai/select').then(function(response){
+          //   this.list=response.body.goods_info
+          // });
 }
+           }
+
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

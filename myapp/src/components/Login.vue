@@ -10,22 +10,26 @@
 
     <div id="ipt" v-if="local">
       <div class="one">
-        <i class="iconfont">&#xe6ae;</i><input type="text" placeholder="帐号">
+        <i class="iconfont">&#xe6ae;</i>
+        <input type="text" placeholder="帐号" ref="tel">
       </div>
       <div class="two">
-        <i class="iconfont">&#xe619;</i><input type="password" placeholder="密码">
+        <i class="iconfont">&#xe619;</i>
+        <input type="password" placeholder="密码" ref="psw">
       </div>
     </div>
     <div id="ipt" v-else="local">
       <div class="one">
-        <i class="iconfont">&#xe6ae;</i><input type="text" placeholder="手机号/用户名/邮箱">
+        <i class="iconfont">&#xe6ae;</i>
+        <input type="text" placeholder="手机号/用户名/邮箱" ref="tel">
       </div>
       <div class="two">
-        <i class="iconfont">&#xe619;</i><input type="password" placeholder="密码">
+        <i class="iconfont">&#xe619;</i>
+        <input type="password" placeholder="密码" ref="psw">
       </div>
     </div>
 
-    <button>登录</button>
+    <button v-on:click="login">登录</button>
 
     <div id="ks" v-if="local"><span class="l"><a href="#">快速注册</a></span><span class="r"><a href="#">忘记密码</a></span></div>
 
@@ -38,9 +42,9 @@
 </template>
 
 <script>
-  import Swiper from '../../static/swiper.min.js'   
+ 
 export default {
-  name: 'temai',
+  name: 'login',
   data () {
     return {
      local:true
@@ -53,6 +57,29 @@ export default {
       }else{
          this.local=false
       }
+    },
+    login:function(){
+    	this.$http.post('/zhe800/api/user/login',{
+		  		tel:this.$refs.tel.value,
+		  		psw:this.$refs.psw.value
+		  	}).then(response => {
+						console.log(response)
+						if(response.body=="登录成功"){							
+							alert("登录成功")
+							this.$router.push({path: '/Mine'});
+						};
+						if(response.body.status==0){
+							console.log(response.body.status)
+							alert("登陆失败，请检查您的手机号和密码")
+							
+						}
+					}, response => {
+						// error callback
+//						console.log(response.body.status)
+//						if(response.body.status==0){
+//							alert("登陆失败，请检查您的手机号和密码")							
+//						}
+			});
     }
   }
 }
@@ -75,6 +102,24 @@ $ui-width:750px;
 @function px2rem($px){
   @return $px/$ui-width*7.5rem
 }
+
+@font-face {
+  font-family: 'iconfont';
+  src: url('../../static/font/iconfont.eot');
+  src: url('../../static/font/iconfont.eot?#iefix') format('embedded-opentype'),
+  url('../../static/font/iconfont.woff') format('woff'),
+  url('../../static/font/iconfont.ttf') format('truetype'),
+  url('../../static/font/iconfont.svg#iconfont') format('svg');
+}
+
+.iconfont{
+  font-family:"iconfont" !important;
+  font-size:16px;font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 #banner{
   height: px2rem(256px);
   width: 100%;

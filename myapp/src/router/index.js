@@ -6,12 +6,13 @@ import Pintuan from '@/components/Pintuan'
 import Cart from '@/components/Cart'
 import Mine from '@/components/Mine'
 import Search from '@/components/Search'
-import VueResource from 'vue-resource'
 import Login from '@/components/Login'
 import Detail from '@/components/Detail'
-
+import Regist from '@/components/Regist'
+import VueResource from 'vue-resource'
 Vue.use(Router)
 Vue.use(VueResource)
+
 Vue.http.options.emulateJSON = true;
 export default new Router({
   routes: [
@@ -46,7 +47,8 @@ export default new Router({
       name: 'Search',
       component: Search
     },
-     {
+     
+		{
       path: '/login',
       name: 'Login',
       component: Login
@@ -55,6 +57,13 @@ export default new Router({
       path: '/detail',
       name: 'Detail',
       component: Detail
+   },
+   {
+      path: '/regist',
+      name: 'Regist',
+      component: Regist
     }
+
   ]
 })
+

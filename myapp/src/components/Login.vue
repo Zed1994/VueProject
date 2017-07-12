@@ -21,7 +21,7 @@
 
     <div id="ks"><span class="l"><a href="#">快速注册</a></span><span class="r"><a href="#">忘记密码</a></span></div>
 
-    <div id="qita"><span class="l"></span>其他帐号直接登录<span class="r"></span></div>
+    <div id="qita"><img src="https://i0.tuanimg.com/ms/zhe800m/dist/img/passport/m_banner_03.jpg"></div>
     <div id="qqw"><a href="#" ></a><a href="#" class="qqa"></a></div>
 
   </div>
@@ -43,19 +43,32 @@ export default {
 
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style >
 
-  body {
-  background: white; }
-
-html, body {
-  height: 100%; }
-
-</style>
 <style scoped lang='scss'>
 $ui-width:750px;
 @function px2rem($px){
   @return $px/$ui-width*7.5rem
+}
+@font-face {
+  font-family: 'iconfont';
+  src: url('../../static/font/iconfont.eot');
+  src: url('../../static/font/iconfont.eot?#iefix') format('embedded-opentype'),
+  url('../../static/font/iconfont.woff') format('woff'),
+  url('../../static/font/iconfont.ttf') format('truetype'),
+  url('../../static/font/iconfont.svg#iconfont') format('svg');
+}
+
+.iconfont{
+  font-family:"iconfont" !important;
+  font-size:22px;font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#ele{
+  background: #fff;
+  height: 100%;
 }
 #banner{
   height: px2rem(256px);
@@ -120,15 +133,14 @@ button{
   }
 }
 #qita{
-  padding-top: px2rem(40px);
+  padding-top: px2rem(80px);
   height: px2rem(40px);
   text-align: center;
   line-height: px2rem(40px);
-  span{
-    width: px2rem(200px);
-    height:px2rem(20px);
-    border-bottom:1px solid #ccc;
-    margin: 0 px2rem(25px);
+  img{
+    height: px2rem(26px);
+    width: px2rem(670px);
+    display: inline-block;
   }
 }
 #qqw{
@@ -138,10 +150,11 @@ button{
   padding-top: px2rem(20px);
   a{
     display: inline-block;
-    width: px2rem(92px);
-    height: px2rem(92px);
+    width: px2rem(90px);
+    height: px2rem(90px);
     padding: 0 px2rem(40px);
     background: #f00;
+    background-size:px2rem(340px);
     background: url(https://status.tuanimg.com/statics/mz/common/img/icon_all.png) no-repeat px2rem(40px) px2rem(-327px);
   }
   .qqa{

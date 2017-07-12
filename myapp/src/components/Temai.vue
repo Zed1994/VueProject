@@ -5,7 +5,7 @@
       <div><a href="#"><i class="iconfont r">&#xe6c0;</i></a></div>
     </div>
     <div id="nav">
-      <span class="l"><a href="#/login">推荐</a></span>
+      <span class="l"><a href="#">推荐</a></span>
       <ul class="r">
         <li id="aaa" class="l"><a href="#">男装</a></li>
         <li ><a href="#">数码家电</a></li>
@@ -134,12 +134,15 @@
       </ul>
     </div>
     </div>
+		<Navbar></Navbar>
 
   </div>
 </div>
 </template>
 
 <script>
+
+	import Navbar from './Navbar'
   import Swiper from '../../static/swiper.min.js'   
 export default {
   name: 'temai',
@@ -148,6 +151,11 @@ export default {
       
     }
   },
+
+  components:{
+			Navbar
+		},
+
   mounted:function(){
     var swiper = new Swiper('.swiper-container',{
       slidesPerView: 1,
@@ -210,7 +218,7 @@ $ui-width:750px;
     width:px2rem(100px);
     padding-left: px2rem(23px);
     a{
-      color: #0ff;
+      color: #e60044;;
     }
   }
   ul{
@@ -320,7 +328,7 @@ $ui-width:750px;
         font-size:  px2rem(9px);
         padding-left: px2rem(9px);
         span{
-          background: #ff0;
+          background: #f90;
           color: #fff;
           border-radius: px2rem(10px);
           padding:0 px2rem(10px);

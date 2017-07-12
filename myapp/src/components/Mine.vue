@@ -9,7 +9,8 @@
         </div>
         <div class="two">
           <div class="login">
-            <a href="#/login"> 登录 | 注册 </a>
+            <a href="#/login"> 登录 |  </a>
+            <a href="#/regist"> 注册   </a>
           </div>
         </div>      
       </div>

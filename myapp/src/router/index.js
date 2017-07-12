@@ -6,15 +6,13 @@ import Pintuan from '@/components/Pintuan'
 import Cart from '@/components/Cart'
 import Mine from '@/components/Mine'
 import Search from '@/components/Search'
-import Lazy from '@/components/Lazyload'
-import { InfiniteScroll  } from 'mint-ui';
-import { Lazyload  } from 'mint-ui';
-import VueResource from 'vue-resource'
 import Login from '@/components/Login'
+import Regist from '@/components/Regist'
+
+import VueResource from 'vue-resource'
 Vue.use(Router)
 Vue.use(VueResource)
-Vue.use(InfiniteScroll);
-Vue.use(Lazyload);
+
 Vue.http.options.emulateJSON = true;
 export default new Router({
   routes: [
@@ -34,11 +32,11 @@ export default new Router({
       name: 'Pintuan',
       component: Pintuan
     },
-//   {
-//    path: '/cart',
-//    name: 'Cart',
-//    component: Cart
-//  },
+     {
+      path: '/cart',
+      name: 'Cart',
+      component: Cart
+    },
      {
       path: '/mine',
       name: 'Mine',
@@ -49,16 +47,16 @@ export default new Router({
       name: 'Search',
       component: Search
     },
-     {
-
-      path: '/lazy',
-      name: 'Lazyload',
-      component: Lazy
-    },
+     
 		{
       path: '/login',
       name: 'Login',
       component: Login
+   },
+   {
+      path: '/regist',
+      name: 'Regist',
+      component: Regist
     }
 
   ]

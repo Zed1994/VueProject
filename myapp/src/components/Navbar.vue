@@ -17,7 +17,7 @@
           <span>拼团</span>
           </router-link>
           
-          <router-link to="/Lazy" active-class="active" exact>
+          <router-link to="/Cart" active-class="active" exact>
           <i class="iconfont">&#xe67f;</i>
           <span>购物车</span>
           </router-link>

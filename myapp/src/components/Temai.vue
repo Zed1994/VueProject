@@ -189,6 +189,24 @@ $ui-width:750px;
 @function px2rem($px){
   @return $px/$ui-width*7.5rem
 }
+
+@font-face {
+  font-family: 'iconfont';
+  src: url('../../static/font/iconfont.eot');
+  src: url('../../static/font/iconfont.eot?#iefix') format('embedded-opentype'),
+  url('../../static/font/iconfont.woff') format('woff'),
+  url('../../static/font/iconfont.ttf') format('truetype'),
+  url('../../static/font/iconfont.svg#iconfont') format('svg');
+}
+
+.iconfont{
+  font-family:"iconfont" !important;
+  font-size:16px;font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 #ele{
   flex:1;
   overflow-x:hidden;

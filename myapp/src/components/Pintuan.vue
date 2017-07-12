@@ -66,7 +66,7 @@
 
 			
 			<section v-for="item in list">
-					<img :src="item.src"/>
+					<img v-lazy="item.src"/>
 					<span class="sales">{{item.count}}</span>
 					<p>{{item.title}}</p>
 					<div class="msg">
@@ -86,7 +86,8 @@
 
 <script>
 	import Footerbar from './Footerbar'
-	import Swiper from '../../static/swiper.min.js'
+	import Swiper from '../../static/swiper.min.js'	
+	
 	export default {
 		name: 'pintuan',
 		data() {
@@ -113,10 +114,10 @@
 		
 
 			},
-			methods: {
-				slider() {
-					var topswiper = new Swiper('header .swiper-container', {
-					slidesPerView: 1,
+		methods: {
+			slider() {
+				var topswiper = new Swiper('header .swiper-container', {
+				slidesPerView: 1,
 
 				})
 				var swiper = new Swiper('#banner .swiper-container', {
@@ -128,12 +129,8 @@
 					autoplay: 3000,
 					autoplayDisableOnInteraction: false
 				});
-			}
-
-			
-			
+			}		
 		}
-
 	}
 </script>
 

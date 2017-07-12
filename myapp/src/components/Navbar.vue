@@ -23,7 +23,6 @@
           </router-link>
 
           <router-link to="/Mine" active-class="active" exact>
-
           <i class="iconfont">&#xe6b3;</i>
           <span>我的</span>
           </router-link>

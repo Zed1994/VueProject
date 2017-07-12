@@ -15,10 +15,7 @@ $ui-width: 750px;
 @function px2rem($px) {
   @return $px/$ui-width*7.5rem;
 }
-/**{
-  padding:0;
-  margin:0;
-}*/
+
 a{
   text-decoration: none
 }

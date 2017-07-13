@@ -65,69 +65,20 @@
 				</a>
 			</div>
 
-			<section>
-					<img src="https://z11.tuanimg.com/imagev2/pin/600x300.69b99e44f4cf1fe484ec9b30ef72fb5f.700x.jpg.webp" alt="" />
-					<span class="sales">限量100件</span>
-					<p>丝飘3层300张30包纯木浆抽纸面巾纸餐巾纸妇婴适用卫生纸软抽纸巾</p>
-					<div class="msg">
-						<span>拼团价￥</span>
-						<span>29.9</span>
-						<span>￥32.9</span>
-						<img src="../../static/image/拼团/pintuan.png"/>
-					</div>
-			</section>
 			
-
-			<section>
-					<img src="http://z11.tuanimg.com/imagev2/pin/750x375.a9f3afaab219dcbb367e1a8f72ed8640.700x.jpg.webp" alt="" />
-					<span class="sales">已拼192件</span>
-					<p>夏天磨毛空调被夏凉被单人宿舍夏被夏季双人被芯春秋儿童薄被芯子</p>
+			<section v-for="item in list">
+					<img v-lazy="item.src"/>
+					<span class="sales">{{item.count}}</span>
+					<p>{{item.title}}</p>
 					<div class="msg">
 						<span>拼团价￥</span>
-						<span>8.7</span>
-						<span>￥18.7</span>
+						<span>{{item.price}}</span>
+						<span>{{item.prev}}</span>
 						
 						<img src="../../static/image/拼团/pintuan.png"/>
 					</div>
 			</section>
 			
-			<section>
-					<img src="https://z12.tuanimg.com/imagev2/pin/750x375.a53edce77b8664187b93abfdd7f2c111.700x.jpg.webp" alt="" />
-					<span class="sales">已拼3955件</span>
-					<p>广西芒果贵妃芒5斤/8斤 单果80-150克 坏果包赔</p>
-					<div class="msg">
-						<span>拼团价￥</span>
-						<span>14.9</span>
-						<span>￥17.9</span>
-						
-						<img src="../../static/image/拼团/pintuan.png"/>
-					</div>
-			</section>
-			
-			<section>
-					<img src="https://z11.tuanimg.com/imagev2/pin/800x400.04917af838db91f290c19c0bb90a7cd0.700x.jpg.webp" alt="" />
-					<span class="sales">已拼1212件</span>
-					<p>【床单+枕套】亲肤磨毛床单三件套斜纹简约亲肤磨毛床单四季通用</p>
-					<div class="msg">
-						<span>拼团价￥</span>
-						<span>19.9</span>
-						<span>￥26.9</span>
-						
-						<img src="../../static/image/拼团/pintuan.png"/>
-					</div>
-			</section>
-			<section>
-					<img src="https://z11.tuanimg.com/imagev2/pin/750x375.16aeebb18d0f2d474d32ccae76e5159f.700x.jpg.webp" alt="" />
-					<span class="sales">已拼3.5万件</span>
-					<p>【竹浆本色纸】无漂白 不含荧光剂】妇婴适用 竹浆本色纸抽纸 纸巾卫生纸 【每包3层300张】10/20/27包装可选</p>
-					<div class="msg">
-						<span>拼团价￥</span>
-						<span>13.9</span>
-						<span>￥17.9</span>
-						
-						<img src="../../static/image/拼团/pintuan.png"/>
-					</div>
-			</section>
 		</main>
 		
 		<Footerbar></Footerbar>
@@ -136,12 +87,13 @@
 
 <script>
 	import Footerbar from './Footerbar'
-	import Swiper from '../../static/swiper.min.js'
+	import Swiper from '../../static/swiper.min.js'	
+	
 	export default {
 		name: 'pintuan',
 		data() {
 			return {
-
+               list:[],
 			}
 		},
 		components:{
@@ -149,13 +101,24 @@
 		},
 
 		mounted: function() {
-			this.slider()
+			this.slider()			
 
-		},
+//			this.$http.get('/static/data/test.json').then(response => {
+			this.$http.post('/zhe800/api/goods/select').then(response => {
+				console.log(response)
+
+				this.list = response.body.goods_info
+
+			}, response => {
+				// error callback
+			});
+		
+
+			},
 		methods: {
 			slider() {
 				var topswiper = new Swiper('header .swiper-container', {
-					slidesPerView: 1,
+				slidesPerView: 1,
 
 				})
 				var swiper = new Swiper('#banner .swiper-container', {
@@ -167,9 +130,8 @@
 					autoplay: 3000,
 					autoplayDisableOnInteraction: false
 				});
-			}
+			}		
 		}
-
 	}
 
 </script>
@@ -187,6 +149,9 @@
 	@function px2rem($px) {
 		@return $px/$ui-width*7.5rem;
 	}
+	
+	
+  
 .pintuan{
 		height: 100%;
 		display: flex;	
@@ -263,6 +228,7 @@
 			position: relative;
 			img{
 				display: block;
+				width: 100%;
 				height: px2rem(360px);
 				position: relative;
 				
@@ -274,7 +240,7 @@
 				height: px2rem(52px);
 				line-height:px2rem(52px);
 				text-align: center;
-				background: white;
+				background: antiquewhite;
 				border-top-right-radius:px2rem(32px) ;
 				border-bottom-right-radius:px2rem(32px) ;
 				position: absolute;

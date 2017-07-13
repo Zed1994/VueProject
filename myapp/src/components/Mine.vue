@@ -1,14 +1,19 @@
 <template>
 
   <div class="wode">
+
       <div id="header">
+
         <div class="one">
             <p class="p1"><a href="#/tejia">&lt;</a></p>
            <h1> 个人中心</h1>
         </div>
         <div class="two">
           <div class="login">
-            <a href="#/login"> 登录 | 注册 </a>
+
+            <a href="#/login"> 登录 |  </a>
+            <a href="#/regist"> 注册   </a>
+
           </div>
         </div>      
       </div>
@@ -76,6 +81,7 @@
           <p class="p5">></p>
         </div>
       </div>
+
     <Navbar></Navbar>
 
   </div>
@@ -125,6 +131,7 @@ export default {
 #mess{width:100%;height:0.9rem;display: flex;flex-direction: row;justify-content: space-between;background: #fff;}
 #mess .p2{height: 0.9rem;line-height: 0.9rem;padding-left: 0.3rem;}
 #mess .p3{height: 0.9rem;line-height: 0.9rem;padding-right: 0.3rem;}
+
 
 #mess1{width:100%;height:1.28rem;background: #fff;}
 #mess1 .u1{width:100%;height:1.28rem;display: flex;flex-direction: row;justify-content: space-around;}

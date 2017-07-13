@@ -1,3 +1,4 @@
+
 <template>
   <div id="ele">
     <div id="banner">
@@ -5,23 +6,36 @@
     </div>
 
     <div id="btn">
-      <div class="ttt"><span><a href="javascript:;">短信验证登陆</a></span><span><a href="javascript:;">帐号密码登录</a></span></div>
+      <div class="ttt"><span><a class="mm1" href="javascript:;" @click="login1()">短信验证登陆</a></span><span><a href="javascript:;" @click="login1()">帐号密码登录</a></span></div>
     </div>
 
-    <div id="ipt">
+    <div id="ipt" v-if="local">
       <div class="one">
-        <i class="iconfont">&#xe6ae;</i><input type="text" placeholder="帐号">
+        <i class="iconfont">&#xe6ae;</i>
+        <input type="text" placeholder="帐号" ref="tel" value="1111">
       </div>
       <div class="two">
-        <i class="iconfont">&#xe619;</i><input type="password" placeholder="密码">
+        <i class="iconfont">&#xe619;</i>
+        <input type="password" placeholder="密码" ref="psw" value="1111">
+      </div>
+    </div>
+    <div id="ipt" v-else="local">
+      <div class="one">
+        <i class="iconfont">&#xe6ae;</i>
+        <input type="text" placeholder="手机号/用户名/邮箱" ref="tel" value="1111">
+      </div>
+      <div class="two">
+        <i class="iconfont">&#xe619;</i>
+        <input type="password" placeholder="密码" ref="psw" value="1111">
       </div>
     </div>
 
-    <button>登录</button>
+    <button v-on:click="login">登录</button>
 
-    <div id="ks"><span class="l"><a href="#">快速注册</a></span><span class="r"><a href="#">忘记密码</a></span></div>
+    <div id="ks" v-if="local"><span class="l"><a href="#">快速注册</a></span><span class="r"><a href="#">忘记密码</a></span></div>
 
-    <div id="qita"><img src="https://i0.tuanimg.com/ms/zhe800m/dist/img/passport/m_banner_03.jpg"></div>
+     <div id="ks1" v-else="local">收不到短信<span><a href="javascript:;">使用语音验证码</a></span></div>
+    <div id="qita"><span class="l"></span>其他帐号直接登录<span class="r"></span></div>
     <div id="qqw"><a href="#" ></a><a href="#" class="qqa"></a></div>
 
   </div>
@@ -29,12 +43,44 @@
 </template>
 
 <script>
-  import Swiper from '../../static/swiper.min.js'   
+ 
 export default {
-  name: 'temai',
+  name: 'login',
   data () {
     return {
-      
+     local:true
+    }
+  },
+  methods:{
+    login1:function(){
+      if(this.local!==true){
+          this.local=true
+      }else{
+         this.local=false
+      }
+    },
+    login:function(){
+    	this.$http.post('/zhe800/api/user/login',{
+		  		tel:this.$refs.tel.value,
+		  		psw:this.$refs.psw.value
+		  	}).then(response => {
+						console.log(response)
+						if(response.body=="登录成功"){							
+							alert("登录成功")
+							this.$router.push({path: '/Mine'});
+						};
+						if(response.body.status==0){
+							console.log(response.body.status)
+							alert("登陆失败，请检查您的手机号和密码")
+							
+						}
+					}, response => {
+						// error callback
+//						console.log(response.body.status)
+//						if(response.body.status==0){
+//							alert("登陆失败，请检查您的手机号和密码")							
+//						}
+			});
     }
   }
 }
@@ -43,12 +89,21 @@ export default {
 
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
+<style >
 
+  body {
+  background: white; }
+
+html, body {
+  height: 100%; }
+
+</style>
 <style scoped lang='scss'>
 $ui-width:750px;
 @function px2rem($px){
   @return $px/$ui-width*7.5rem
 }
+
 @font-face {
   font-family: 'iconfont';
   src: url('../../static/font/iconfont.eot');
@@ -60,16 +115,12 @@ $ui-width:750px;
 
 .iconfont{
   font-family:"iconfont" !important;
-  font-size:22px;font-style:normal;
+  font-size:16px;font-style:normal;
   -webkit-font-smoothing: antialiased;
   -webkit-text-stroke-width: 0.2px;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#ele{
-  background: #fff;
-  height: 100%;
-}
 #banner{
   height: px2rem(256px);
   width: 100%;
@@ -133,14 +184,15 @@ button{
   }
 }
 #qita{
-  padding-top: px2rem(80px);
+  padding-top: px2rem(40px);
   height: px2rem(40px);
   text-align: center;
   line-height: px2rem(40px);
-  img{
-    height: px2rem(26px);
-    width: px2rem(670px);
-    display: inline-block;
+  span{
+    width: px2rem(200px);
+    height:px2rem(20px);
+    border-bottom:1px solid #ccc;
+    margin: 0 px2rem(25px);
   }
 }
 #qqw{
@@ -150,15 +202,18 @@ button{
   padding-top: px2rem(20px);
   a{
     display: inline-block;
-    width: px2rem(90px);
-    height: px2rem(90px);
+    width: px2rem(92px);
+    height: px2rem(92px);
     padding: 0 px2rem(40px);
     background: #f00;
-    background-size:px2rem(340px);
     background: url(https://status.tuanimg.com/statics/mz/common/img/icon_all.png) no-repeat px2rem(40px) px2rem(-327px);
   }
   .qqa{
     background: url(https://status.tuanimg.com/statics/mz/common/img/icon_all.png) no-repeat px2rem(40px) px2rem(-450px);
   }
 }
+#ks1{text-align:center}
+#ks1 a{color:blue;text-decoration:underline;}
+
 </style>
+

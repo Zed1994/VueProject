@@ -131,8 +131,8 @@
           <p><span>抚顺</span>这个软件不一般</p>
           <h3>￥49<span>￥123</span></h3>
         </li>-->
-         <li class="l" v-for="item in list">
-          <a href="#"><img :src="item.src"/></a>
+         <li class="l" v-for="(item,index) in list">
+          <router-link :to="'/detail?id='+index"><img :src="item.src"/></router-link>
           <p><span>{{item.addr}}</span>{{item.title}}</p>
           <h3>{{item.price}}<span>{{item.prev}}</span></h3>
         </li>

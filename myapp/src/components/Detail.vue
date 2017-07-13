@@ -37,7 +37,7 @@
 
               <div class="info">
                 <p class="p2">加减乘除食品 即食芒果干草莓干果脯蜜饯无添加120g袋装休闲零食</p>
-                <p class="p3">￥<span class="s1">16.9</span><span class="s2">新品秒杀特价</span></p>
+                <p class="p3"><span class="s1">{{big1}}</span><span class="s2">新品秒杀特价</span></p>
                 <p class="p4">价格￥<span class="s3">30.3</span></p>
                 <div class="d5">
                   <p class="p5">快递<span class="s4">0.0</span></p>
@@ -116,6 +116,8 @@ export default {
   name: 'temai',
   data () {
     return {
+      big1:'',
+      pid:'',
       selected: "1",
       type:"A"
     }
@@ -147,9 +149,33 @@ export default {
   },
    mounted:function(){
    this.swipers()
+   //获取产品编号
+   var idd=location.hash;
+   idd=idd.split("?");
+
+     this.pid=idd[1].substr(3)
+ console.log(this.pid)
+   var that=this
+
+       that.$http.post('/zhe800/api/temai/select',{
+           id:that.pid
+       }).then(response => {
+        console.log(response)
+        that.big1=response.body.goods_info[that.pid].prev
+        
+        console.log(that.big1)
+      }, response => {
+        // error callback
+
+      });
   },
   updated:function(){
     this.swipers()
+  },
+  beforeMount:function(){
+    // alert(this.$route.query.id)
+
+    
   }
 }
 </script>

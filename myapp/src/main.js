@@ -6,6 +6,11 @@ import router from './router'
 
 import { InfiniteScroll  } from 'mint-ui';
 import { Lazyload  } from 'mint-ui';
+// Require dependencies 
+
+import VueCookie  from'vue-cookie';
+// Tell Vue to use the plugin 
+Vue.use(VueCookie);
 Vue.use(InfiniteScroll);
 Vue.use(Lazyload);
 

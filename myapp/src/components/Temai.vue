@@ -8,7 +8,7 @@
       <span class="l"><a href="#">推荐</a></span>
       <ul class="r">
         <li id="aaa" class="l"><a href="#">男装</a></li>
-        <li ><a href="#">数码家电</a></li>
+        <li ><a href="#/detail">数码家电</a></li>
         <li ><a href="#">运动</a></li>
         <li ><a href="#">鞋包</a></li>
         <li ><a href="#">美食</a></li>

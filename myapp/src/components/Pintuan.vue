@@ -72,8 +72,7 @@
 					<div class="msg">
 						<span>拼团价￥</span>
 						<span>{{item.price}}</span>
-						<span>{{item.prev}}</span>
-						
+						<span>{{item.prev}}</span>						
 						<img src="../../static/image/拼团/pintuan.png"/>
 					</div>
 			</section>
@@ -129,7 +128,8 @@
 					autoplay: 3000,
 					autoplayDisableOnInteraction: false
 				});
-			}		
+			}
+			
 		}
 	}
 </script>

@@ -26,7 +26,7 @@
 
 <script>
 
-//	import '../../static/checkcode.js'
+
 import { Toast } from 'mint-ui';
 	export default {
 		name: 'regist',
@@ -39,6 +39,7 @@ import { Toast } from 'mint-ui';
 				isExist: false,     //号码是否存在
 				isValid: false,     //手机号格式是否有效
 				isRight:false       //验证码是否正确
+
 			}
 		},
 		mounted:function(){
@@ -126,7 +127,6 @@ import { Toast } from 'mint-ui';
 	        
 			},
 			regist: function() {
-
 				if((this.isValid ==true) &&(this.isExist == false)&&(this.isRight ==true)){
 					this.$http.post('/zhe800/api/user/register', {
 						tel: this.tel,
@@ -152,7 +152,6 @@ import { Toast } from 'mint-ui';
 						}
 					}, response => {
 						// error callback
-
 					})	
 				}else{
 					Toast({
@@ -308,99 +307,6 @@ import { Toast } from 'mint-ui';
 		          
         }
 	}
-	button {
-		width: 90%;
-		margin-left: 5%;
-		background: #ef4949;
-		height: px2rem(90px);
-		line-height: px2rem(90px);
-		text-align: center;
-		outline: none;
-		border: none;
-		margin-top: .6rem;
-		color: white;
-	}
-</style>
-
-	}
-	
-	.iconfont {
-		font-family: "iconfont" !important;
-		font-size: 16px;
-		font-style: normal;
-		-webkit-font-smoothing: antialiased;
-		-webkit-text-stroke-width: 0.2px;
-		-moz-osx-font-smoothing: grayscale;
-	}
-	
-	.header {
-		width: 100%;
-		height: px2rem(110px);
-		line-height: px2rem(110px);
-		background: #F8F8F8;
-		border-bottom: 1px solid #D5D5D5;
-		text-align: center;
-		font-size: 20px;
-		position: relative;
-		a {
-			position: absolute;
-			left: .3rem;
-			font-size: 32px;
-		}
-	}
-	
-	.one {
-		width: 100%;
-		height: px2rem(112px);
-		font-size: 12px;
-		i {
-			display: inline-block;
-			box-sizing: border-box;
-			height: 1.12rem;
-			width: 0.5rem;
-			padding-top: 0.15rem;
-			line-height: 1.12rem;
-			margin-left: .5rem;
-			vertical-align: top;
-		}
-		input {
-			display: inline-block;
-			box-sizing: border-box;
-			height: 100%;
-			width: 6rem;
-			margin-top: .15rem;
-			border: none;
-			outline: none;
-			border-bottom: 1px solid #F5F5F5;
-		}
-	}
-	
-	.two {
-		width: 100%;
-		height: px2rem(112px);
-		font-size: 12px;
-		i {
-			display: inline-block;
-			box-sizing: border-box;
-			height: 1.12rem;
-			width: 0.5rem;
-			padding-top: 0.15rem;
-			line-height: 1.12rem;
-			margin-left: .5rem;
-			vertical-align: top;
-		}
-		input {
-			display: inline-block;
-			box-sizing: border-box;
-			height: 100%;
-			width: 6rem;
-			margin-top: .15rem;
-			border: none;
-			outline: none;
-			border-bottom: 1px solid #F5F5F5;
-		}
-	}
-	
 	button {
 		width: 90%;
 		margin-left: 5%;

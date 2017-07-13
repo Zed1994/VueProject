@@ -8,10 +8,16 @@
            <h1> 个人中心</h1>
         </div>
         <div class="two">
-          <div class="login">
+         <div class="login"  v-if="local">
+           
+            <a href="javascript:;">{{username}}</a>
+          </div>
+          <div class="login" v-else="local">
             <a href="#/login"> 登录 |  </a>
             <a href="#/regist"> 注册   </a>
           </div>
+         
+
         </div>      
       </div>
       <div id="mess">
@@ -89,11 +95,20 @@ export default {
   name: 'mine',
   data () {
     return {
-      
+      local:true,
+      username:''
     }
   },
   components:{
     Navbar
+  },
+  mounted:function(){
+    if(this.$cookie.get('name')){
+        this.local=true
+        this.username=this.$cookie.get('name')
+    }else{
+      this.local=false
+    }
   }
 }
 </script>

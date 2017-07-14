@@ -11,34 +11,32 @@
     <div id="center">
           <div id="one" v-if="type === 'A'">
               <div class="banner">
-                   <div class="swiper-container">
+                <div class="swiper-container">
                   <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                      <a href="#"><img src="//img.alicdn.com/bao/uploaded/i2/2907356160/TB2rqspumxjpuFjSszeXXaeMVXa_!!2907356160.jpg_760x760Q50s50.jpg"></a>
+                      <a href="#"><img :src="src1"></a>
                     </div>
             
                     <div class="swiper-slide">
-                     <a href="#"><img src="//img.alicdn.com/bao/uploaded/i4/TB1B_KjQVXXXXbjXXXXXXXXXXXX_!!0-item_pic.jpg_640x640q50.jpg"></a>
+                     <a href="#"><img :src="src2"></a>
                     </div>
 
                     <div class="swiper-slide">
-                     <a href="#"><img src="//img.alicdn.com/bao/uploaded/i4/2907356160/TB2.U_luH8kpuFjy0FcXXaUhpXa_!!2907356160.jpg_760x760Q50s50.jpg"></a>
+                     <a href="#"><img :src="src3"></a>
                     </div>
 
                     
                   </div>
-                    <div class="swiper-pagination">
-                     
-
+                    <div class="swiper-pagination">                 
                     </div>
                 </div>
               </div>
 
 
               <div class="info">
-                <p class="p2">加减乘除食品 即食芒果干草莓干果脯蜜饯无添加120g袋装休闲零食</p>
-                <p class="p3"><span class="s1">{{big1}}</span><span class="s2">新品秒杀特价</span></p>
-                <p class="p4">价格￥<span class="s3">30.3</span></p>
+                <p class="p2">{{name}}</p>
+                <p class="p3"><span class="s1">￥{{big1}}</span><span class="s2">新品秒杀特价</span></p>
+                <p class="p4">价格￥<span class="s3">{{prev}}</span></p>
                 <div class="d5">
                   <p class="p5">快递<span class="s4">0.0</span></p>
                   <p class="p6">月销量<span class="s5">144</span></p>
@@ -48,19 +46,19 @@
               </div>
               <div class="d6"></div>
               <img class="img1" src="../../static/image/详情/1.jpg">
-               <img class="img1" src="../../static/image/详情/2.jpg">
+              <img class="img1" src="../../static/image/详情/2.jpg">
           </div>
           <div  v-else-if="type === 'B'">
              <img class="img1" src="../../static/image/详情/3.png">
              <img class="img1" src="../../static/image/详情/4.png">
              <img class="img1" src="../../static/image/详情/5.png">
-              <img class="img1" src="../../static/image/详情/6.png">
-              <img class="img1" src="../../static/image/详情/7.png">
-              <img class="img1" src="../../static/image/详情/8.png">
+             <img class="img1" src="../../static/image/详情/6.png">
+             <img class="img1" src="../../static/image/详情/7.png">
+             <img class="img1" src="../../static/image/详情/8.png">
           </div>
 
           <div v-else="type === 'C'">
-              <img class="img1" src="../../static/image/详情/9.png">
+             <img class="img1" src="../../static/image/详情/9.png">
              <img class="img1" src="../../static/image/详情/10.png">
              <img class="img1" src="../../static/image/详情/11.png">
           </div>
@@ -92,7 +90,7 @@
           </li>
         </ul>
         <div class="left">
-          <div class="d1"><a href="javascript:;">加入购物车</a></div>
+          <div class="d1"><a href="javascript:;" @click="add2cart">加入购物车</a></div>
           <div class="d1 red"><a href="">立即购买</a></div>
         </div>
     </div>
@@ -103,6 +101,7 @@
 <script>
 import Swiper from '../../static/swiper.min.js'  
 import Vue from 'vue' 
+import { Toast } from 'mint-ui';
 import { Navbar, TabItem,TabContainerItem,Cell ,TabContainer} from 'mint-ui'
 
 Vue.component(TabContainer.name, TabContainer);
@@ -117,12 +116,17 @@ export default {
   data () {
     return {
       big1:'',
+      prev:'',
       pid:'',
       selected: "1",
-      type:"A"
+      type:"A",
+      src1:'',
+      src2:'',
+      src3:'',
+      name:''
     }
   },
-   components:{},
+  components:{},
   methods:{
     change:function(e){
       if(e.target.getAttribute('data-id1') == 1){
@@ -138,39 +142,67 @@ export default {
       
     },
     swipers:function(){
-       var swiper = new Swiper('.swiper-container',{
+      var swiper = new Swiper('.swiper-container',{
       slidesPerView: 1,
       paginationClickable: true,           
       loop: true,
-       pagination: '.swiper-pagination',
-       autoplay:2000,
-    });
+      pagination: '.swiper-pagination',
+      autoplay:2000,
+      });
+    },
+    add2cart:function(){
+    	this.$http.post('/zhe800/api/shop_cart/add', {
+							goods_id:parseInt(this.pid)+1,
+							count:1
+						}).then(response => {
+							console.log(response)
+							if(response.body=="购物车添加成功"){
+									Toast({
+										message: '购物车添加成功',
+										position: 'bottom',
+										duration: 3000
+									});
+
+							}else{
+								Toast({
+									message: '购物车添加失败',
+									position: 'bottom',
+									duration: 3000
+								});
+							}
+						}, response => {
+							// error callback
+	
+						})  		
     }
   },
-   mounted:function(){
-   this.swipers()
-   //获取产品编号
-   var idd=location.hash;
-   idd=idd.split("?");
+  mounted:function(){
+     this.swipers()
+     //获取产品编号
+	   var idd=location.hash;
+	   idd=idd.split("?");
 
      this.pid=idd[1].substr(3)
- console.log(this.pid)
-   var that=this
-
-       that.$http.post('/zhe800/api/temai/select',{
-           id:that.pid
-       }).then(response => {
-        console.log(response)
-        that.big1=response.body.goods_info[that.pid].prev
-        
-        console.log(that.big1)
-      }, response => {
-        // error callback
-
-      });
+ 		 console.log(this.pid)
+     var that=this
+ 		 that.$http.post('/zhe800/api/temai/select',{
+        id:that.pid
+     }).then(response => {
+			    console.log(response);
+			    that.name=response.body.goods_info[that.pid].name
+			    that.big1=response.body.goods_info[that.pid].price;
+			    that.prev=response.body.goods_info[that.pid].prev;
+			    that.src1=response.body.goods_info[that.pid].src;
+			    that.src2=response.body.goods_info[that.pid].src;
+			    that.src3=response.body.goods_info[that.pid].src
+			    console.log(that.big1)
+	   }, response => {
+	    // error callback
+	
+	  });
   },
   updated:function(){
-    this.swipers()
+       this.swipers()
   },
   beforeMount:function(){
     // alert(this.$route.query.id)
@@ -189,8 +221,8 @@ export default {
 #header{width:100%;height:1rem;}
 #center{flex: 1;width:100%;height:12rem;display:flex;overflow-x: hidden;flex-direction: column;}
 #center #one .banner img{width:7.5rem;}
-#center #one .info{width:100%;height:2.5rem;margin-top:0.2rem;background:#fff;}
-#center #one .info .p2{min-height: 16px;line-height: 16px;font-size: 14px;color:#444;}
+#center #one .info{width:100%;height:2.5rem;margin-top:0.2rem;background:#fff;overflow: hidden;}
+#center #one .info .p2{margin-top:10px;min-height: 16px;line-height: 16px;font-size: 14px;color:#444;}
 #center #one .p3{width:96%;margin-left:2%;height:0.6rem;color:#e24848;font-size:16px;margin-top:0.2rem;}
 
 #center #one .p3 .s1{font-size:20px;}

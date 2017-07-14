@@ -215,6 +215,7 @@ import { Toast } from 'mint-ui';
 			position: absolute;
 			left: .3rem;
 			font-size: 32px;
+			color: white;
 		}
 	}
 	

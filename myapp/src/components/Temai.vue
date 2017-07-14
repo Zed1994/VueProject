@@ -133,8 +133,8 @@
         </li>-->
          <li class="l" v-for="(item,index) in list">
           <router-link :to="'/detail?id='+index"><img :src="item.src"/></router-link>
-          <p><span>{{item.addr}}</span>{{item.title}}</p>
-          <h3>{{item.price}}<span>{{item.prev}}</span></h3>
+          <p><span>{{item.addr}}</span>{{item.name}}</p>
+          <h3>￥{{item.price}}<span>￥{{item.prev}}</span></h3>
         </li>
       </ul>
     </div>

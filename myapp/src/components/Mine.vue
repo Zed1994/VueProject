@@ -59,10 +59,10 @@
         </ul>
       </div>
       <div id="down">
-        <div class="cart">
+        <router-link to="/Cart" class="cart">
           <p class="p4">购物车</p>
           <p class="p5">></p>
-        </div>
+        </router-link>
         <div class="juan">
           <p class="p4">优惠券</p>
           <p class="p5">></p>
@@ -134,6 +134,7 @@ export default {
 #header{height:2.54rem;width:100%;background:#ff4545;}
 #header .one{width:100%;height:1rem;line-height: 1rem;display: flex;flex-direction: row;}
 #header .one .p1{font-size: 25px;color:#fff;width:1rem;padding-left: 0.3rem;}
+#header .one .p1 a{color:white}
 #header .one h1{text-align: center;flex: 1;padding-right: 1.2rem;font-size:20px;color:#fff;}
 #header .two {width:2.94rem;height:0.74rem;line-height: 0.74rem;text-align: center;margin:0.2rem auto;border:2px solid #fff;border-radius: 20px;}
 #header .two a{color:#fff;font-size: 16px;}

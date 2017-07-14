@@ -165,7 +165,7 @@ export default {
 
 							}else{
 								Toast({
-									message: '购物车添加失败',
+									message: '购物车添加失败，请先登录',
 									position: 'bottom',
 									duration: 3000
 								});

@@ -6,6 +6,7 @@ import router from './router'
 
 import { InfiniteScroll  } from 'mint-ui';
 import { Lazyload  } from 'mint-ui';
+//import { Toast } from 'mint-ui'; 
 Vue.use(InfiniteScroll);
 Vue.use(Lazyload);
 

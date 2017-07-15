@@ -163,9 +163,15 @@ export default {
 										duration: 3000
 									});
 
+							}else if(response.body=="您还没有登录,请登录"){
+									Toast({
+										message: '添加失败，请先登录',
+										position: 'bottom',
+										duration: 3000
+									});
 							}else{
 								Toast({
-									message: '购物车添加失败，请先登录',
+									message: '购物车添加失败',
 									position: 'bottom',
 									duration: 3000
 								});

@@ -1,25 +1,26 @@
 <template>
-  <div class="faxian">
+  <div class="cart">
   <div class="header">
 			<router-link to="/">&lt;</router-link>
 			购物车
-		</div>
-  <div class="list" v-if="local" v-for=" (item,index ) in list">
-  		<img :src="item.src"/>
-  		<span class="name">{{item.name}}</span>
-  		<span class="price">价格：￥<span class="num">{{item.price}}</span></span>
-  		<div class="option">
-  			<span class="counter">数量：</span>
-  			<button class="reduce" @click="decrease(index)">-</button>
-  			<span id="count">{{item.count}}</span>
-  			<button class="add"  @click="increase(index)">+</button>  			
-  		</div>
-  		<a href="javascript:;" class="delete" @click="deleteList(item.id)">删除</a>
-  		<span class="total">总计：￥<span class="money">{{item.price*item.count}}</span></span>
-  		<button class="buy">立即购买</button>
+	</div>
+	<div class="container" v-if="local">	
+		  <div class="list" v-for=" (item,index ) in list">
+		  		<img :src="item.src"/>
+		  		<span class="name">{{item.name}}</span>
+		  		<span class="price">价格：￥<span class="num">{{item.price}}</span></span>
+		  		<div class="option">
+		  			<span class="counter">数量：</span>
+		  			<button class="reduce" @click="decrease(index)">-</button>
+		  			<span id="count">{{item.count}}</span>
+		  			<button class="add"  @click="increase(index)">+</button>  			
+		  		</div>
+		  		<a href="javascript:;" class="delete" @click="deleteList(item.id)">删除</a>
+		  		<span class="total">总计：￥<span class="money">{{item.price*item.count}}</span></span>
+		  		<button class="buy">立即购买</button>
+		  </div>
   </div>
-  
-  <div class="list" v-else="local">
+  <div v-else="local">
     <div id="empty">
         <img class="img1" src="//i0.tuanimg.com/ms/zhe800h5/dist/img/cart_list_count/icon_cart.png">
         <p class="p1">您的购物车是空的，请先登录</p>
@@ -49,7 +50,7 @@ export default {
   	}else{
   		this.local = false;
   	};
-  	if(this.local = true){
+  	if(this.local === true){
 	  	this.$http.post('/zhe800/api/shop_cart/cartlist', {						
 						}).then(response => {
 							console.log(response)						
@@ -127,8 +128,13 @@ $ui-width:750px;
   -moz-osx-font-smoothing: grayscale;
 }
 
-
+.cart{
+	display: flex;
+	flex-direction: column;
+	height:100%;
+}
 .header {
+		display: flex;
 		width: 100%;
 		height: px2rem(110px);
 		line-height: px2rem(110px);
@@ -137,12 +143,16 @@ $ui-width:750px;
 		text-align: center;
 		font-size: 20px;
 		position: relative;
+		justify-content: center;
 		a {
 			position: absolute;
 			left: .3rem;
 			font-size: 32px;
 		}
 	}
+.container{
+		width: 100%;
+		flex: 1;
 	.list{
 		width: 100%;
 		height: 3.5rem;
@@ -211,7 +221,8 @@ $ui-width:750px;
 	    font-size: 18px;
 	    color: white;
 		}
-		
+	}	
+}	
 		#empty{
 			width:100%;
 			height:12.34rem;
@@ -237,7 +248,8 @@ $ui-width:750px;
 			}
 		}
 
-	}
+	
+
 </style>
 
 

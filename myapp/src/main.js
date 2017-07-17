@@ -6,9 +6,20 @@ import router from './router'
 
 import { InfiniteScroll  } from 'mint-ui';
 import { Lazyload  } from 'mint-ui';
-//import { Toast } from 'mint-ui'; 
+
+// Require dependencies 
+
+import VueCookie  from'vue-cookie';
+// Tell Vue to use the plugin 
+
+import { Loadmore } from 'mint-ui';
+
+Vue.component(Loadmore.name, Loadmore)
+Vue.use(VueCookie);
+
 Vue.use(InfiniteScroll);
 Vue.use(Lazyload);
+
 
 Vue.config.productionTip = false
 

@@ -8,7 +8,7 @@
       <span class="l"><a href="#">推荐</a></span>
       <ul class="r">
         <li id="aaa" class="l"><a href="#">男装</a></li>
-        <li ><a href="#">数码家电</a></li>
+        <li ><a href="#/detail">数码家电</a></li>
         <li ><a href="#">运动</a></li>
         <li ><a href="#">鞋包</a></li>
         <li ><a href="#">美食</a></li>
@@ -131,8 +131,8 @@
           <p><span>抚顺</span>这个软件不一般</p>
           <h3>￥49<span>￥123</span></h3>
         </li>-->
-         <li class="l" v-for="item in list">
-          <a href="#"><img :src="item.src"/></a>
+         <li class="l" v-for="(item,index) in list">
+          <router-link :to="'/detail?id='+index"><img :src="item.src"/></router-link>
           <p><span>{{item.addr}}</span>{{item.title}}</p>
           <h3>{{item.price}}<span>{{item.prev}}</span></h3>
         </li>

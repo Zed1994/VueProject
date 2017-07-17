@@ -10,8 +10,8 @@ import Search from '@/components/Search'
 
 
 import Login from '@/components/Login'
+import Detail from '@/components/Detail'
 import Regist from '@/components/Regist'
-
 
 import VueResource from 'vue-resource'
 Vue.use(Router)
@@ -56,6 +56,11 @@ export default new Router({
       path: '/login',
       name: 'Login',
       component: Login
+    },
+    {
+      path: '/detail',
+      name: 'Detail',
+      component: Detail
    },
    {
       path: '/regist',

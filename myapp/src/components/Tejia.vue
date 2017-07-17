@@ -84,7 +84,8 @@
 <!-- ======================shop============== -->
     <div id="shop">
       <ul class="u3">
-        <li class="l3">
+      <!-- v-for="item in list" -->
+        <li class="l3" >
           <img class="img3" src="//z12.tuanimg.com/imagev2/zhaoshang/700x700.d0164199f090b12ace75441a480031f8.310x310.jpg.webp">
           <div class="d5">
             <span class="s1">上海</span>
@@ -197,6 +198,7 @@ export default {
   name: 'tejia',
   data () {
     return {
+      list:[]
     }
   },
   components:{
@@ -211,8 +213,12 @@ mounted:function(){
              pagination: '.swiper-pagination',
              autoplay:2000
         });
-           }
+          // this.$http.post('/zhe800/api/temai/select').then(function(response){
+          //   this.list=response.body.goods_info
+          // });
 }
+           }
+
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

@@ -67,6 +67,8 @@ export default {
 						console.log(response)
 						if(response.body=="登录成功"){							
 							alert("登录成功")
+              this.$cookie.get('name')
+              console.log( this.$cookie.get('name'))
 							this.$router.push({path: '/Mine'});
 						};
 						if(response.body.status==0){
